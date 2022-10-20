@@ -15,17 +15,20 @@ else {
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(name) {
-  if (name.length === 0) {
+function findLongestWord(words) {
+  let longest = ""  
+  if (words.length === 0) {
     return null
   }
-  else if (name.length === 1) {
-    return name
+  else if (words.length === 1) {
+    return words[0]
   }
-  else if (name.length > 1) {
-    return name
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i]
+    }
   }
-
+  return longest
   
 }
 
@@ -38,10 +41,11 @@ function sumNumbers(numbers) {
 if (numbers.length === 0) {
   return 0
 }
-for (let sum = 0, i = 0; i < numbers.length; i++) {
-return (sum += numbers[i])
+let sum = 0
+for (i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
 }
-
+return sum
 }
 
 
